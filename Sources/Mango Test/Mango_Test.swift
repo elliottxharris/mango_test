@@ -1,6 +1,3 @@
-public struct Mango_Test {
-    public private(set) var text = "Hello, World!"
-
-    public init() {
-    }
+struct Mango_Test {
+    // TODO: implement algorithm
 }
