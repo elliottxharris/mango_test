@@ -2,10 +2,19 @@ import XCTest
 @testable import Mango_Test
 
 final class Mango_TestTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Mango_Test().text, "Hello, World!")
+    func testBasic() throws {
+        let deps = [
+            "A B",
+            "B C"
+        ]
+        
+        let edgeAB = Edge(origin: "A", dest: "B")
+        let edgeAC = Edge(origin: "A", dest: "C")
+        let edgeBC = Edge(origin: "B", dest: "C")
+        
+        let graph = Graph(graphDict: ["A": [edgeAB, edgeAC], "B": [edgeBC]])
+        
+        
+        XCTAssertEqual(mangoTest(deps: deps), graph)
     }
 }
